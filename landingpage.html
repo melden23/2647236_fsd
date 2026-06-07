@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EventSphere - Campus Event Finder</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+html{
+    scroll-behavior:smooth;
+}
+</style>
+
+</head>
+
+<body class="bg-slate-50">
+ <!--nav-->
+<nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent">
+            EventSphere
+        </h1>
+
+        <ul class="hidden md:flex gap-8 font-medium text-slate-700">
+            <li><a href="#">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+
+        <button class="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
+            Sign In
+        </button>
+
+    </div>
+
+</nav>
+<!--hero section-->
+<section class="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+
+    <div class="absolute inset-0">
+
+        <img
+            src="https://farm66.staticflickr.com/65535/53997956167_6c9edd142c_b.jpg"
+            class="w-full h-full object-cover">
+
+    </div>
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+
+
+        <h1 class="text-5xl md:text-7xl font-bold mt-6 leading-tight">
+
+            Discover Every Event
+
+            <span class="block text-pink-400">
+                Happening On Campus
+            </span>
+
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-slate-200 max-w-2xl mx-auto">
+
+            Find hackathons, workshops, cultural fests,
+            networking events and sports competitions
+            all in one place.
+
+        </p>
+
+        <div class="max-w-2xl mx-auto mt-10 flex bg-white rounded-xl overflow-hidden shadow-2xl">
+
+            <input
+                type="text"
+                placeholder="Search events..."
+                class="w-full px-5 py-4 text-gray-700 outline-none">
+
+            <button class="bg-pink-500 px-8 hover:bg-pink-600">
+                Search
+            </button>
+
+        </div>
+
+        <div class="mt-8 flex justify-center gap-4 flex-wrap">
+
+            <button class="bg-pink-500 px-7 py-3 rounded-lg font-semibold hover:bg-pink-600 transition">
+                Explore Events
+            </button>
+
+            <button class="border border-white px-7 py-3 rounded-lg hover:bg-white hover:text-black transition">
+                Learn More
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!--categories section-->
+<section id="categories" class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-12">
+
+            <h2 class="text-4xl font-bold text-slate-800">
+                Browse By Category
+            </h2>
+
+            <p class="text-gray-500 mt-3">
+                Explore events based on your interests
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+
+            <div class="bg-slate-50 rounded-2xl p-8 text-center hover:shadow-xl hover:-translate-y-2 transition">
+                <div class="text-5xl">💻</div>
+                <h3 class="font-bold text-xl mt-4">Hackathons</h3>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 text-center hover:shadow-xl hover:-translate-y-2 transition">
+                <div class="text-5xl">📚</div>
+                <h3 class="font-bold text-xl mt-4">Workshops</h3>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 text-center hover:shadow-xl hover:-translate-y-2 transition">
+                <div class="text-5xl">🎭</div>
+                <h3 class="font-bold text-xl mt-4">Cultural</h3>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 text-center hover:shadow-xl hover:-translate-y-2 transition">
+                <div class="text-5xl">⚽</div>
+                <h3 class="font-bold text-xl mt-4">Sports</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="events" class="py-20 bg-gradient-to-b from-slate-50 to-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="flex justify-between items-center mb-10">
+
+<h2 class="text-4xl font-bold">
+Upcoming Events
+</h2>
+
+<div class="flex gap-3">
+
+<button id="prev"
+class="bg-white shadow-lg w-12 h-12 rounded-full">
+←
+</button>
+
+<button id="next"
+class="bg-white shadow-lg w-12 h-12 rounded-full">
+→
+</button>
+
+</div>
+
+</div>
+
+<div class="overflow-hidden">
+
+<div id="eventSlider"
+class="flex gap-6 transition-transform duration-500">
+<div class="min-w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300">
+
+    <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD6uq0HmI-LkEYPC-j6bqXIpFASFsaxU3CTw&s"
+    class="h-52 w-full object-cover">
+
+    <div class="p-6">
+
+        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">
+            Technology
+        </span>
+
+        <h3 class="text-xl font-bold mt-4">
+            AI Hackathon
+        </h3>
+
+        <p class="text-gray-600 mt-2">
+            Build innovative AI solutions and compete for prizes.
+        </p>
+
+    </div>
+
+</div>
+<div class="min-w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300">
+
+    <img
+    src="https://farm66.staticflickr.com/65535/53179536085_8e203d5fb8_b.jpg"
+    class="h-52 w-full object-cover">
+
+    <div class="p-6">
+
+        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">
+            Cultural Fest
+        </span>
+
+        <h3 class="text-xl font-bold mt-4">
+            Ethnic Day
+        </h3>
+
+        <p class="text-gray-600 mt-2">
+            Celebrate diversity and cultural heritage.
+        </p>
+
+    </div>
+
+</div><div class="min-w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300">
+
+    <img
+    src="https://christuniversity.in/uploads/userfiles/image/Kengeri/sports/IMG_1697.JPG"
+    class="h-52 w-full object-cover">
+
+    <div class="p-6">
+
+        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">
+           Sports
+        </span>
+
+        <h3 class="text-xl font-bold mt-4">
+            INTER-STREAM SPORTS MEET
+        </h3>
+
+        <p class="text-gray-600 mt-2">
+            Compete in football, basketball, and more.
+        </p>
+
+    </div>
+
+</div><div class="min-w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300">
+
+    <img
+    src="https://farm66.staticflickr.com/65535/54846873435_7f1847ff34_b.jpg"
+    class="h-52 w-full object-cover">
+
+    <div class="p-6">
+
+        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">
+            Workshop
+        </span>
+
+        <h3 class="text-xl font-bold mt-4">
+          web development workshop
+        </h3>
+
+        <p class="text-gray-600 mt-2">
+            Learn the latest web development techniques and build real-world projects.
+        </p>
+
+    </div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="gallery" class="py-20 bg-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-12">
+
+<h2 class="text-4xl font-bold">
+Event Gallery
+</h2>
+
+<p class="text-gray-500 mt-3">
+Memories from our campus events
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<img src="https://daijiworld.ap-south-1.linodeobjects.com/Linode/images3/christ100924_2.jpg"
+class="rounded-2xl h-72 w-full object-cover hover:scale-105 transition">
+
+<img src="https://christuniversity.in/uploads/userfiles/milaqn.jpg"
+class="rounded-2xl h-72 w-full object-cover hover:scale-105 transition">
+
+<img src="https://farm66.staticflickr.com/65535/54216406050_299bb1f8c7_z.jpg"
+class="rounded-2xl h-72 w-full object-cover hover:scale-105 transition">
+
+<img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800"
+class="rounded-2xl h-72 w-full object-cover hover:scale-105 transition">
+
+<img src="https://farm66.staticflickr.com/65535/53999090738_493abc683c_b.jpg"
+class="rounded-2xl h-72 w-full object-cover hover:scale-105 transition">
+
+<img src="https://dfhe5ze0n4pxu.cloudfront.net/College/Image/Image-1765344485361.jpg"
+class="rounded-2xl h-72 w-full object-cover hover:scale-105 transition">
+
+</div>
+
+</div>
+
+</section>
+<section class="bg-gradient-to-r from-indigo-600 to-pink-500 text-white py-20">
+
+<div class="max-w-4xl mx-auto text-center px-6">
+
+<h2 class="text-4xl font-bold">
+Never Miss An Event Again
+</h2>
+
+<p class="mt-4 text-lg">
+Join thousands of students discovering opportunities every day.
+</p>
+
+<button class="mt-8 bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold">
+Get Started
+</button>
+
+</div>
+
+</section>
+<footer class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-10">
+
+<div class="max-w-7xl mx-auto px-6 text-center">
+
+<h3 class="text-2xl font-bold">
+EventSphere
+</h3>
+
+<p class="text-slate-400 mt-3">
+Connecting students with exciting opportunities.
+</p>
+
+<p class="text-slate-500 mt-6 text-sm">
+© 2026 EventSphere. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+<script>
+
+const slider = document.getElementById("eventSlider");
+
+let position = 0;
+
+document.getElementById("next").onclick = () => {
+
+    position -= 370;
+
+    if(position < -740){
+        position = 0;
+    }
+
+    slider.style.transform = `translateX(${position}px)`;
+}
+
+document.getElementById("prev").onclick = () => {
+
+    position += 370;
+
+    if(position > 0){
+        position = -740;
+    }
+
+    slider.style.transform = `translateX(${position}px)`;
+}
+
+</script>
+
+</body>
+</html>
