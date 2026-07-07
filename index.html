@@ -1,13 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>attendance-app</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Student Attendance System</h1>
+
+    <div class="controls">
+        <input type="text" id="studentName" placeholder="Student Name">
+        <button onclick="addStudent()">Add Student</button>
+    </div>
+
+    <div class="searchBox">
+        <input type="text" id="search" placeholder="Search Student..." onkeyup="searchStudent()">
+    </div>
+
+    <table id="attendanceTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Present</th>
+                <th>Absent</th>
+                <th>Attendance %</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
