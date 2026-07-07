@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.addStudent {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.addStudent input {
+  width: 300px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  font-size: 16px;
+}
+
+.addStudent button {
+  background: #2196F3;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.addStudent button:hover {
+  background: #1976d2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #2196F3;
+  color: white;
+  padding: 14px;
+}
+
+td {
+  padding: 14px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.presentBtn,
+.absentBtn {
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 3px;
+}
+
+.presentBtn {
+  background: #28a745;
+}
+
+.presentBtn:hover {
+  background: #218838;
+}
+
+.absentBtn {
+  background: #dc3545;
+}
+
+.absentBtn:hover {
+  background: #c82333;
+}
+
+.summary {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  background: #2196F3;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 35px;
+}
+
+.card p {
+  margin-top: 8px;
+  font-size: 18px;
+}
